@@ -4,7 +4,7 @@
     width: 16px;
     height: 16px;
     /* 这里改变跟随的底色 */
-    background: rgb(235, 143, 38);
+    background: rgb(27, 247, 255);
     border-radius: 8px;
     opacity: 0.25;
     z-index: 10086;
@@ -117,51 +117,6 @@
 
 
 
-  /* 文章页H1-H6图标样式效果 */
-/* 控制风车转动速度 4s那里可以自己调节快慢 */
-h1::before,
-h2::before,
-h3::before,
-h4::before,
-h5::before,
-h6::before {
-  -webkit-animation: ccc 4s linear infinite;
-  animation: ccc 4s linear infinite;
-}
-/* 控制风车转动方向 -1turn 为逆时针转动，1turn 为顺时针转动，相同数字部分记得统一修改 */
-@-webkit-keyframes ccc {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(-1turn);
-    transform: rotate(-1turn);
-  }
-}
-@keyframes ccc {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(-1turn);
-    transform: rotate(-1turn);
-  }
-}
-
-
-
-
-
-
-
-/* 夜间模式菜单栏发光字 */
-[data-theme="dark"] #nav .site-page,
-[data-theme="dark"] #nav .menus_items .menus_item .menus_item_child li a {
-  text-shadow: 0 0 2px var(--theme-color) !important;
-}
-
 /* 手机端适配 */
 [data-theme="dark"] #sidebar #sidebar-menus .menus_items .site-page {
   text-shadow: 0 0 2px var(--theme-color) !important;
@@ -228,4 +183,28 @@ h6::before {
 #aside-content > .card-widget.card-info > #card-info-btn {
   background-color: #3eb8be;
   border-radius: 8px;
+}
+
+/* 页脚与头图透明 */
+#footer {
+  background: transparent !important;
+}
+#page-header {
+  background: transparent !important;
+}
+
+/* 白天模式遮罩透明 */
+#footer::before {
+  background: transparent !important;
+}
+#page-header::before {
+  background: transparent !important;
+}
+
+/* 夜间模式遮罩透明 */
+[data-theme="dark"] #footer::before {
+  background: transparent !important;
+}
+[data-theme="dark"] #page-header::before {
+  background: transparent !important;
 }
